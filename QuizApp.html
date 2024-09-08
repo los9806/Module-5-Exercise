@@ -1,0 +1,93 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Module 5: Quiz App</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+
+        <h1 class="title">Module 5: Quiz App</h1>
+
+        <h2>What is your favorite color?</h2>
+        <br>
+        <input type="radio" name="q1" value="1">a. Blue</input>
+        <input type="radio" name="q1" value="2">b. Red</input>
+        <input type="radio" name="q1" value="3">c. Green</input>
+        <input type="radio" name="q1" value="4">d. Purple</input>
+        <br>
+        <br>
+        <h2>Who is your favorite anime chracter?</h2>
+        <br>
+        <input type="radio" name="q2" value="1">a. Naruto</input>
+        <input type="radio" name="q2" value="2">b. Inuyasha</input>
+        <input type="radio" name="q2" value="3">c. Gojo</input>
+        <input type="radio" name="q2" value="4">d. Denji</input>
+        <br>
+        <br>
+        <h2>What is your favorite sport to watch?</h2>
+        <br>
+        <input type="radio" name="q3" value="1">a. Football</input>
+        <input type="radio" name="q3" value="2">b. Baseball</input>
+        <input type="radio" name="q3" value="3">c. Basketball</input>
+        <input type="radio" name="q3" value="4">d. Hockey</input>
+        <br>
+        <br>
+        <h2>Which gaming console do you prefer?</h2>
+        <br>
+        <input type="radio" name="q4" value="1">a. Xbox</input>
+        <input type="radio" name="q4" value="2">b. PS5</input>
+        <input type="radio" name="q4" value="3">c. Nintendo Switch</input>
+        <input type="radio" name="q4" value="4">d. PC</input>
+        <br>
+        <br>
+        <h2>What is your favorite movie genre?</h2>
+        <br>
+        <input type="radio" name="q5" value="1">a. Horror</input>
+        <input type="radio" name="q5" value="2">b. Comedy</input>
+        <input type="radio" name="q5" value="3">c. Action</input>
+        <input type="radio" name="q5" value="4">d. Rom Com</input>
+        <br>
+        <br>
+        <button id="submit">Submit Answers</button>
+        <br>
+        <p id="result"></p>
+
+        <script>
+
+            let submitOption = document.getElementById("submit");
+            let userResult = document.getElementById("result");
+
+            const correctAnswers = { 
+                q1: "4", //correct answer is purple
+                q2: "3", //correct answer is Gojo
+                q3: "1", //correct answer is football
+                q4: "4", //correct answer is PC
+                q5: "2" //correct answer is comedy
+            };
+
+            submitOption.addEventListener("click", function () {
+                let correctScore = 0;
+
+                for (const questions in correctAnswers) { //loop while there are answers left to check
+                    const selectedOption = document.querySelector(`input[name = "${questions}"]:checked`); //declares selectedOption to be whatever user selected
+
+                    if (selectedOption && selectedOption.value === correctAnswers[questions]) {
+                        correctScore++; //if selected option was right, increment score by 1
+                    };
+                };
+
+                userResult.textContent = `You scored ${correctScore}!`;
+            });
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+.title {
+    background: linear-gradient(rgba(91, 22, 120, 0.729), rgba(122, 89, 137, 0.729));
+    color: black;
+    margin: 10px;
+    padding: 15px;
+    align-items: center;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-color: rgb(20, 59, 99);
+    border-radius: 10px;
+    text-align: center;
+}
+
+body {
+    background-color: slategrey;
+    font-family: "Nerko One";
+    color: ghostwhite;
+}
+
+h2 {
+    color: rgb(150, 32, 150);
+}
+
+button {
+    background-color: black;
+    color: ghostwhite;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
